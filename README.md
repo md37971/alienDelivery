@@ -2,10 +2,10 @@
 Alien Delivery is a simple game that I developed as a fun personal project in Summer 2024 using the Pygame library in python. In this game, you are an alien working at a mail company and your goal is to deliver the package to the customer before it arrives late; however, it's not an easy journey as their are obstacles in the sky, but you thankfully have your ship to fly. Deliver the package on-time or else....
 
 # Controls
-W - Up,
-S - Down,
-A - Left,
-D - Right
+W or UP ARROW KEY - Up <br>
+S or DOWN ARROW KEY - Down <br>
+A or LEFT ARROW KEY - Left <br>
+D or RIGHT ARROW KEY - Right <br>
 
 # Issues
 Currently, there are issues with collisions in some of the blocks, resulting in the player teleporting in different directions. I will try to find a solution to this problem.
