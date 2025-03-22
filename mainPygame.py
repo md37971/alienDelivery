@@ -683,14 +683,14 @@ while running:
     if level > 0:
         key = pygame.key.get_pressed()
         if transitiondelay >= 50:
-            if key[pygame.K_w] and key[pygame.K_d]: player.move_ip(speed * dt,-speed * dt)
-            elif key[pygame.K_w] and key[pygame.K_a]: player.move_ip(-speed * dt,-speed * dt)
-            elif key[pygame.K_s] and key[pygame.K_d]: player.move_ip(speed * dt,speed * dt)
-            elif key[pygame.K_s] and key[pygame.K_a]: player.move_ip(-speed * dt,speed * dt)
-            elif key[pygame.K_w]: player.move_ip(0,-speed * dt)
-            elif key[pygame.K_s]: player.move_ip(0,speed * dt)
-            elif key[pygame.K_a]: player.move_ip(-speed * dt,0)
-            elif key[pygame.K_d]: player.move_ip(speed * dt,0)
+            if (key[pygame.K_w] and key[pygame.K_d] or (key[pygame.K_UP] and key[pygame.K_RIGHT])): player.move_ip(speed * dt,-speed * dt)
+            elif (key[pygame.K_w] and key[pygame.K_a] or (key[pygame.K_UP] and key[pygame.K_LEFT])): player.move_ip(-speed * dt,-speed * dt)
+            elif (key[pygame.K_s] and key[pygame.K_d] or (key[pygame.K_DOWN] and key[pygame.K_RIGHT])): player.move_ip(speed * dt,speed * dt)
+            elif (key[pygame.K_s] and key[pygame.K_a] or (key[pygame.K_DOWN] and key[pygame.K_LEFT])): player.move_ip(-speed * dt,speed * dt)
+            elif (key[pygame.K_w] or key[pygame.K_UP]): player.move_ip(0,-speed * dt)
+            elif (key[pygame.K_s] or key[pygame.K_DOWN]): player.move_ip(0,speed * dt)
+            elif (key[pygame.K_a] or key[pygame.K_LEFT]): player.move_ip(-speed * dt,0)
+            elif (key[pygame.K_d] or key[pygame.K_RIGHT]): player.move_ip(speed * dt,0)
             else: player.move_ip(0,0)
         
         #keeps player on screen
