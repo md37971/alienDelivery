@@ -1,5 +1,12 @@
 # Alien Delivery (Python)
-Alien Delivery is a simple game that I developed as a fun personal project in Summer 2024 using the Pygame library in python. In this game, you are an alien working at a mail company and your goal is to deliver the package to the customer before it arrives late; however, it's not an easy journey as their are obstacles in the sky, but you thankfully have your ship to fly. Deliver the package on-time or else....
+Alien Delivery is a simple game that I developed as a fun personal project in Summer 2024 using the Pygame library in python. In this game, you are an alien working at a mail company and your goal is to deliver the package to the customer before it arrives late; however, it's not an easy journey as there are obstacles in the sky, but you thankfully have your ship to fly. Deliver the package on-time or else....
+
+# How to setup
+  1.)  Ensure that Python is installed on your computer through the Python website. <br>
+  2.)  Once Python is installed, type the following command line in the command prompt `pip install pygame` to install the pygame library. <br>
+  3.)  Download the files/clone the repository. <br>
+  4.)  Run the `mainPygame.py` file to launch the game. <br>
+  5.)  Have fun! <br>
 
 # Controls
 W or UP ARROW KEY - Up <br>

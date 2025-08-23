@@ -11,7 +11,7 @@ class Clouds: #cloudClass.draw(x,y,l,w,image_index)
         self.randomCloud = randomCloud
 
     def draw(self):
-        self.cloudImage = pygame.image.load("sprites/"+ self.randomCloud).convert_alpha()
+        self.cloudImage = pygame.image.load("images/sprites/"+ self.randomCloud).convert_alpha()
         self.cloudImage = pygame.transform.scale(self.cloudImage,(self.l,self.w))
         self.cloudDisplay = self.cloudImage.get_rect(midright = (self.x,self.y))
         screen.blit(self.cloudImage,self.cloudDisplay)

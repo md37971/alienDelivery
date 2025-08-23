@@ -1,13 +1,13 @@
 import pygame, random
 pygame.init()
-from cloudObject import Clouds
-from propObject import PropImage
-from buttonObject import MenuButton
+from classFiles.cloudObject import Clouds
+from classFiles.propObject import PropImage
+from classFiles.buttonObject import MenuButton
 
 #Display Functions
 def scoreboard(t,x = 0,x2 = 0,textY = 0,iconPos = 0,index = 0,resize = 0,resize2 = 0):
     iconArray = ["ufoplayer","timer","coin"]
-    iconImage = pygame.image.load("sprites/" + iconArray[index] + ".png")
+    iconImage = pygame.image.load("images/sprites/" + iconArray[index] + ".png")
     iconImage = pygame.transform.scale(iconImage,(50 + resize,50 + resize2))
     iconDisplay = iconImage.get_rect(topleft = (iconPos + 125,52.5))
     blackbox = pygame.Surface((screenWidth / 5,screenHeight/8))
@@ -427,7 +427,7 @@ class EnemyBlock: #enemyClass.draw(x,y,l,w,imageIndex)
     def draw(self,x,y,l,w,index = 0):
         global gameActive, lives
         enemyArray = ["emptyEnemy","spike1","spike2","spike3","spike4","spikeBall","enemyFlame"]
-        self.enemyImage = pygame.image.load("sprites/" +enemyArray[index] + ".png").convert_alpha()
+        self.enemyImage = pygame.image.load("images/sprites/" +enemyArray[index] + ".png").convert_alpha()
         self.enemyImage = pygame.transform.scale(self.enemyImage,(l,w))
         self.enemy = self.enemyImage.get_rect(topleft = (x,y))
         screen.blit(self.enemyImage,self.enemy)
@@ -439,7 +439,7 @@ class EnemyBlock: #enemyClass.draw(x,y,l,w,imageIndex)
 class SolidBlock: #solidClass.draw(x,y,l,w,imageIndex) -- TO BE FIXED
     def draw(self,x,y,l,w,index = 0):
         textureArray = ["dirt","dirt2","dirt3","castle","block"]
-        solidImage = pygame.image.load("platforms/" + textureArray[index] + ".png").convert()
+        solidImage = pygame.image.load("images/platforms/" + textureArray[index] + ".png").convert()
         solidImage = pygame.transform.scale(solidImage,(l,w))
         solidDisplay = solidImage.get_rect(topleft = (x,y))
         screen.blit(solidImage,solidDisplay)
@@ -466,7 +466,7 @@ class SolidBlock: #solidClass.draw(x,y,l,w,imageIndex) -- TO BE FIXED
 class CoinBlock: #coinClass.draw(x,y,row,col)
     def draw(self,x,y,row = 0, col = 0):
         global coinCount, coinLife, lives
-        self.coinImage = pygame.image.load("sprites/coin.png").convert_alpha()
+        self.coinImage = pygame.image.load("images/sprites/coin.png").convert_alpha()
         self.coinImage = pygame.transform.scale(self.coinImage,(50,50))
         self.coinDisplay = self.coinImage.get_rect(midright = (x,y))
         if coinStorage[row][col] == True: screen.blit(self.coinImage, self.coinDisplay)
@@ -488,7 +488,7 @@ class CoinBlock: #coinClass.draw(x,y,row,col)
 class FinishLine: #finishClass.draw(x,y,nextLevel,nextX,nextY, max (optional))
     def draw(self,x,y,nextLevel,nextX,nextY,max = 11 + 1):
         global level, playerXpos, playerYpos, transitiondelay, gameActive, finished
-        self.finishImage = pygame.image.load("sprites/finishFlag.png").convert_alpha()
+        self.finishImage = pygame.image.load("images/sprites/finishFlag.png").convert_alpha()
         self.finishImage = pygame.transform.scale(self.finishImage,(60,60))
         self.finishDisplay = self.finishImage.get_rect(center = (x,y))
         screen.blit(self.finishImage,self.finishDisplay)
@@ -514,10 +514,10 @@ class TeleportBlock: #teleportClass.draw(x1,y1,x2,y2,action1(tp2),action2(tp1))
         global teleportdelay
         newPos = 90
         tpArray = ["tp1_1","tp1_2","tp2_1","tp2_2"]
-        self.tp1Image = pygame.image.load("sprites/" + tpArray[index1] + ".png").convert_alpha()
+        self.tp1Image = pygame.image.load("images/sprites/" + tpArray[index1] + ".png").convert_alpha()
         self.tp1Image = pygame.transform.scale(self.tp1Image,(50,50))
         self.tp1 = self.tp1Image.get_rect(topleft = (x1,y1))
-        self.tp2Image = pygame.image.load("sprites/" + tpArray[index2] + ".png").convert_alpha()
+        self.tp2Image = pygame.image.load("images/sprites/" + tpArray[index2] + ".png").convert_alpha()
         self.tp2Image = pygame.transform.scale(self.tp2Image,(50,50))
         self.tp2 = self.tp2Image.get_rect(topleft = (x2,y2))
         screen.blit(self.tp1Image,self.tp1)
@@ -578,12 +578,12 @@ audioVolume = 0.60
 lives = 5 - 1
 
 #Images
-titlescreen = pygame.image.load("images/titlescreen.png").convert_alpha()
+titlescreen = pygame.image.load("images/backgrounds/titlescreen.png").convert_alpha()
 titlescreen = pygame.transform.scale(titlescreen,(1100,700))
-background = pygame.image.load("images/background.png").convert_alpha()
+background = pygame.image.load("images/backgrounds/background.png").convert_alpha()
 background = pygame.transform.scale(background,(screenWidth,screenHeight))
-background2 = pygame.image.load("images/background2.png").convert_alpha()
-ufoPlayerImage = pygame.image.load("sprites/ufoplayer.png").convert_alpha()
+background2 = pygame.image.load("images/backgrounds/background2.png").convert_alpha()
+ufoPlayerImage = pygame.image.load("images/sprites/ufoplayer.png").convert_alpha()
 ufoPlayerImage = pygame.transform.scale(ufoPlayerImage,(80,45))
 player = ufoPlayerImage.get_rect(topleft = (playerXpos,playerYpos))
 

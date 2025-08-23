@@ -5,7 +5,7 @@ screen = pygame.display.set_mode((screenWidth,screenHeight))
 class MenuButton:   
     def draw(self,sw1,sh1,constant,sw2,sh2,r,g,b,x,y,index,add = 0): #Audio Button
         iconImages = ["audioIcon.png","musicIcon.png"]
-        self.selectedIcon = pygame.image.load("sprites/" + iconImages[index]).convert_alpha()
+        self.selectedIcon = pygame.image.load("images/sprites/" + iconImages[index]).convert_alpha()
         self.selectedIcon = pygame.transform.scale(self.selectedIcon,(85,85))
         self.iconLogo = self.selectedIcon.get_rect(topleft = (x + add,y))
         self.blackBorder = pygame.Rect(screenWidth / sw1 + add, screenHeight / sh1,constant + 20,constant + 20)
